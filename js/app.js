@@ -15,9 +15,21 @@ const my_news = [
 
 const News = React.createClass({
     render: function() {
+        var data = this.props.data;
+        var newsTemplate = data.map(function(item, index) {
+            return (
+                <div key={index}>
+                    <p className="news__author">{item.author}:</p>
+                    <p className="news__text">{item.text}</p>
+                </div>
+            )
+        })
+
+        console.log(newsTemplate);
+
         return (
             <div className="news">
-                К сожалению, новостей нет.
+                {newsTemplate}
             </div>
         );
     }

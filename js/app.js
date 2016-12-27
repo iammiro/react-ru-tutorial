@@ -14,6 +14,10 @@ const my_news = [
     {
         author: 'UFO',
         text: 'Test'
+    },
+    {
+        author: 'UFO',
+        text: 'Test'
     }
 ];
 
@@ -37,7 +41,7 @@ const News = React.createClass({
         return (
             <div className="news">
                 {newsTemplate}
-                <strong className={data.length > 0 ? '':'none'}>Всего новостей: {data.length}</strong>
+                <strong className={'news__count ' + (data.length > 0 ? '':'none' ) }>Всего новостей: {data.length}</strong>
             </div>
         );
     }
